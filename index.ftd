@@ -35,7 +35,7 @@ url: https://www.linkedin.com/in/vishyr/
 
 -- end: container
 
--- slider: Experiences and Investments
+-- slider: **Experiences and Investments**
 
 
 -- image:
@@ -87,6 +87,7 @@ src: $assets.files.static.logo-netscape-1.png
 
 -- image:
 src: $assets.files.static.logo-nftically.png
+
 -- end: slider
 
 -- container: Are you a Builder?
@@ -330,6 +331,8 @@ role: $inherited.types.copy-regular
 -- ftd.text: $card.body
 role: $inherited.types.copy-regular
 margin-bottom.px: 24
+padding-horizontal.px: 10
+text-align: center
 
 -- ftd.column:
 border-radius.percent: 100
@@ -442,6 +445,14 @@ white-space: nowrap
 -- end: button
 
 
+
+
+
+
+
+
+
+
 -- component slider:
 ftd.image-src background-image: $assets.files.static.topography.svg
 children slider-wrap:
@@ -480,7 +491,7 @@ text-align: center
 -- ftd.row:
 width: fill-container
 padding-vertical.px: 24
-padding-horizontal.px: 24
+spacing.fixed.px: 24
 
 -- ftd.image:
 src: $assets.files.static.left.png
@@ -489,12 +500,13 @@ height.fixed.px: 20
 align-self: center
 
 -- ftd.row:
-width.fixed.px: 1400
 overflow-x: auto
 children: $slider.slider-wrap
 align-self: center
 align-content: center
-spacing.fixed.px: 24
+spacing.fixed.px: 64
+padding-left.px: 300
+width.fixed.px: 1400
 
 -- end: ftd.row
 
@@ -540,7 +552,7 @@ integer width: 1290
 -- ftd.column:
 height: fill-container
 padding-vertical.px: 100
-padding-bottom.px: 450
+padding-bottom.px: 300
 padding-horizontal.px: 35
 align-self: center
 
@@ -591,16 +603,37 @@ url: $hero.cta-link
 
 -- component footer:
 string copy:
-
+string powered-by: Powered By:
 
 -- ftd.column:
 width: fill-container
 padding-vertical.px: 25
 align-content: center
 
+-- ftd.column:
+align-content: center
+
 -- ftd.text: 
 text: $footer.copy
 role: $inherited.types.copy-regular
+
+-- ftd.row:
+spacing.fixed.px: 12
+align-content: center
+margin-top.px: 12
+
+-- ftd.text: 
+text: $footer.powered-by
+role: $inherited.types.fine-print
+
+-- ftd.image:
+src: https://fastn.io/-/fastn.io/images/fastn.svg
+link: https://github.com/fastn-stack/fastn/
+height.fixed.px: 16
+
+-- end: ftd.row
+
+-- end: ftd.column
 
 -- end: ftd.column
 

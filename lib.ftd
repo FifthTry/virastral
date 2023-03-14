@@ -49,6 +49,7 @@ anchor: parent
 top.px: 0
 left.px: 0
 z-index: -1
+overflow-x: hidden
 
 -- ftd.image:
 src: $assets.files.static.bgimage.jpeg
@@ -413,8 +414,8 @@ children: $slider.slider-wrap
 align-self: center
 align-content: center
 spacing.fixed.px: 64
-padding-left.px: 300
-width.fixed.px: 1400
+padding-left.px if { ftd.device != "mobile" }: 300
+width.fixed.px if { ftd.device != "mobile" }: 1400
 
 -- end: ftd.row
 

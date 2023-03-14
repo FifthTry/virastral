@@ -3,6 +3,16 @@
 
 
 -- page:
+contact-text-url: mailto:invest@virastral.com
+
+-- hero: For Brave Entrepreneurs Shooting for the Stars
+cta-text: Get In Touch
+cta-link: mailto:invest@virastral.com
+
+
+VirASTRAL is a founder-led early stage startup studio focused on helping fellow founders build world-shaping Generative AI, Web3 and AI SaaS companies from India and other emerging markets. We are extremely selective, looking to provide the needed mentorship, connections and funding for innovation obsessed founding teams creating disruptive and delightful products.
+
+-- end: hero
 
 
 -- container: Meet VirASTRAL
@@ -12,14 +22,14 @@ We have over 30 years of experience operating and scaling high growth public com
 -- card: Ravi Sundararajan
 avatar: $assets.files.static.ravi.jpeg
 profile: **Managing Partner, CEO**
-url: /
+url: https://www.linkedin.com/in/ravisundararajan/
 
 *Former COO at GupShup. Pre-IPO Exec at Akamai. VP at Palm/HP. McKinsey. Harvard MBA*
 
 -- card: Viswanath Ramachandran
 avatar: $assets.files.static.vishal.jpeg
 profile: **Managing Partner, CTO**
-url: /
+url: https://www.linkedin.com/in/vishyr/
 
 *Former CTO at GupShup. Engineering Director at Meta. Netscape. CSE IIT Bombay. Ph.D. CS Brown*
 
@@ -37,11 +47,21 @@ Get in touch. We love meeting like minded Founders
 
 -- button: Send a Ping
 role: medium
+url: mailto:invest@virastral.com
 
 
 -- end: container
 
 -- end: page
+
+
+
+
+
+
+
+
+
 
 -- component page:
 optional caption title:
@@ -49,7 +69,7 @@ optional body body:
 ftd.image-src site-logo:  $assets.files.static.logo.png
 string site-url:  /
 optional string site-name:
-string contact-text: contact us
+string contact-text: Contact Us
 string contact-text-url: /
 children wrapper:
 ftd.type-data types: $typo.types
@@ -73,7 +93,6 @@ z-index: -1
 
 -- end: ftd.column
 
-
 -- ftd.column:
 max-width.fixed.px: 1290
 align-self: center
@@ -94,6 +113,14 @@ width: fill-container
 align-self: center
 align-content: center
 
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+
+-- footer:
+copy: Copyright © 2023 - VirASTRAL Startup Studio. All rights reserved.
 
 -- end: ftd.column
 
@@ -139,24 +166,14 @@ link: $header.site-url
 
 -- end: ftd.row
 
-
 -- ftd.row:
-if: {header.contact-txt != NULL}
-border-width.px: 1
-border-color: $inherited.colors.text-strong
-border-radius.px: 1 
-padding-vertical.px: 5
-padding-horizontal.px: 15
-link: $header.contact-url 
 align-self: center
 
--- ftd.text: $header.contact-txt
-role: $inherited.types.button-medium
-color: $inherited.colors.text-strong
-white-space: nowrap
+-- button: $header.contact-txt
+role: small
+url: $header.contact-url
 
 -- end: ftd.row
-
 
 -- end: ftd.row
 
@@ -304,14 +321,16 @@ boolean $is-active: false
 
 -- ftd.row:
 
-
 -- ftd.row:
 if: {button.role == "small"}
 border-width.px: 1
 border-color: $inherited.colors.text-strong
-border-radius.px: 1 
-background.solid if {button.is-active}: $inherited.colors.cta-primary.abse
-padding-vertical.px: 5
+border-color if {button.is-active}: $inherited.colors.cta-primary.hover
+border-radius.px: 3 
+background.solid if {button.is-active}: $inherited.colors.cta-primary.hover
+$on-mouse-enter$: $ftd.set-bool($a = $button.is-active, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $button.is-active, v = false)
+padding-vertical.px: 6
 padding-horizontal.px: 15
 link: $button.url
 align-self: center
@@ -325,8 +344,11 @@ white-space: nowrap
 
 -- ftd.row:
 if: {button.role == "medium"}
-background.solid: $inherited.colors.cta-secondary.base
-border-radius.px: 1 
+background.solid: $inherited.colors.custom.seven
+background.solid if {button.is-active}: $inherited.colors.custom.four
+$on-mouse-enter$: $ftd.set-bool($a = $button.is-active, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $button.is-active, v = false)
+border-radius.px: 3 
 padding-vertical.px: 12
 padding-horizontal.px: 16
 link: $button.url
@@ -342,8 +364,11 @@ white-space: nowrap
 
 -- ftd.row:
 if: {button.role == "large"}
-border-radius.px: 1 
-background.solid: $inherited.colors.cta-secondary.base
+border-radius.px: 3 
+background.solid: $inherited.colors.custom.seven
+background.solid if {button.is-active}: $inherited.colors.custom.four
+$on-mouse-enter$: $ftd.set-bool($a = $button.is-active, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $button.is-active, v = false)
 padding-vertical.px: 13
 padding-horizontal.px: 40
 link: $button.url
@@ -358,3 +383,91 @@ white-space: nowrap
 -- end: ftd.row
 
 -- end: button
+
+
+
+
+
+
+
+
+
+
+
+-- component hero:
+caption title:
+string cta-text:
+string cta-link:
+body body:
+integer width: 1290
+
+-- ftd.column:
+height: fill-container
+padding-vertical.px: 100
+padding-bottom.px: 300
+padding-horizontal.px: 35
+align-self: center
+
+-- ftd.column:
+width: fill-container
+max-width.fixed.px: $hero.width 
+align-content if { ftd.device == "mobile" }: center
+
+-- ftd.column:
+width.fixed.percent if { ftd.device == "desktop" }: 55
+width.fixed.percent if { ftd.device == "mobile" }: 80
+align-content if { ftd.device == "mobile" }: center
+spacing.fixed.px: 32
+
+-- ftd.text: $hero.title
+role: $inherited.types.heading-hero
+color: $inherited.colors.text-strong
+text-align if { ftd.device == "mobile" }: center
+region: h1
+
+-- ftd.text:
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong
+text-align if { ftd.device == "mobile" }: center
+
+$hero.body
+
+-- button: $hero.cta-text
+role: large
+url: $hero.cta-link
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: hero
+
+
+
+
+
+
+
+
+
+
+-- component footer:
+string copy:
+
+
+-- ftd.column:
+width: fill-container
+padding-vertical.px: 25
+align-content: center
+
+-- ftd.text: 
+text: $footer.copy
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong.light
+
+
+-- end: ftd.column
+
+-- end: footer

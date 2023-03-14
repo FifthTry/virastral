@@ -1,96 +1,91 @@
 -- import: fifthtry.github.io/virastral-template/assets
--- import: fifthtry.github.io/raleway-typography as typo
--- import: fifthtry.github.io/default-cs as cs
+-- import: fifthtry.github.io/virastral-template/lib as fastn
 
--- page:
+-- fastn.page:
 contact-text-url: mailto:invest@virastral.com
 
--- hero: For Brave Entrepreneurs Shooting for the Stars
+-- fastn.hero: For Brave Entrepreneurs Shooting for the Stars
 cta-text: Get In Touch
 cta-link: mailto:invest@virastral.com
 
 
 VirASTRAL is a founder-led early stage startup studio focused on helping fellow founders build world-shaping Generative AI, Web3 and AI SaaS companies from India and other emerging markets. We are extremely selective, looking to provide the needed mentorship, connections and funding for innovation obsessed founding teams creating disruptive and delightful products.
 
--- end: hero
+-- end: fastn.hero
 
 
--- container: Meet VirASTRAL
+-- fastn.container: Meet VirASTRAL
 
 We have over 30 years of experience operating and scaling high growth public companies and venture backed startups. Our expertise in **scaling tech stacks**  and **driving** **new product adoption**,  **sales growth**  and **sustained profitability**  for  **Internet Infrastructure, SaaS, Mobility, Social Media, eCommerce and AI businesses** , enables us to provide world-class advice to our founders. We have invested in and mentored startups from seed stage to venture funding and created meaningful exits including IPOs and acquisitions. 
  
--- card: Ravi Sundararajan
+-- fastn.card: Ravi Sundararajan
 avatar: $assets.files.static.ravi.jpeg
 profile: **Managing Partner, CEO**
 url: https://www.linkedin.com/in/ravisundararajan/
 
 *Former COO at GupShup. Pre-IPO Exec at Akamai. VP at Palm/HP. McKinsey. Harvard MBA*
 
--- card: Viswanath Ramachandran
+-- fastn.card: Viswanath Ramachandran
 avatar: $assets.files.static.vishal.jpeg
 profile: **Managing Partner, CTO**
 url: https://www.linkedin.com/in/vishyr/
 
 *Former CTO at GupShup. Engineering Director at Meta. Netscape. CSE IIT Bombay. Ph.D. CS Brown*
 
--- end: container
+-- end: fastn.container
 
--- slider: **Experiences and Investments**
+-- fastn.slider: **Experiences and Investments**
 
-
--- image:
+-- fastn.image:
 src: $assets.files.static.logo-akamai-1.png
 
--- image:
+-- fastn.image:
 src: $assets.files.static.logo-aol-1.png
 
-
--- image:
+-- fastn.image:
 src: $assets.files.static.logo-babblebots.png
 
-
--- image:
+-- fastn.image:
 src: $assets.files.static.logo-entrust_lockup-2.svg
 
-
--- image:
+-- fastn.image:
 src: $assets.files.static.logo-faballey-1.png
 
--- image:
+-- fastn.image:
 src: $assets.files.static.logo-flexmoney-1.png
 
--- image:
+-- fastn.image:
 src: $assets.files.static.logo-indus-1.jpg
 
--- image:
+-- fastn.image:
 src: $assets.files.static.logopalm.png
 
--- image:
+-- fastn.image:
 src: $assets.files.static.logo-veritas-1.png
 
--- image:
+-- fastn.image:
 src: $assets.files.static.logo-Sun-1.png
 
--- image:
+-- fastn.image:
 src: $assets.files.static.logo-symantec-1.png
 
--- image:
+-- fastn.image:
 src: $assets.files.static.logo-veritas-1.png
 
 
--- image:
+-- fastn.image:
 src: $assets.files.static.logo-Meta-1.png
 
 
--- image:
+-- fastn.image:
 src: $assets.files.static.logo-netscape-1.png
 
--- image:
+-- fastn.image:
 src: $assets.files.static.logo-nftically.png
 
--- end: slider
+-- end: fastn.slider
 
--- container: Are you a Builder?
+-- fastn.container: Are you a Builder?
 background-color: $inherited.colors.background.step-1
 text-color: $inherited.colors.text-strong
 widthfill: true
@@ -100,541 +95,16 @@ role: small
 Get in touch. We love meeting like minded Founders
 
 
--- button: Send a Ping
+-- fastn.button: Send a Ping
 role: medium
 url: mailto:invest@virastral.com
 
 
--- end: container
+-- end: fastn.container
 
 
 
 
--- end: page
+-- end: fastn.page
 
 
-
-
-
-
-
-
-
-
--- component page:
-optional caption title:
-optional body body:
-ftd.image-src site-logo:  $assets.files.static.logo.png
-string site-url:  /
-optional string site-name:
-string contact-text: Contact Us
-string contact-text-url: /
-children wrapper:
-ftd.type-data types: $typo.types
-ftd.color-scheme colors: $cs.main
-
--- ftd.column:
-width: fill-container
-
--- ftd.column:
-width: fill-container
-height: auto
-
--- ftd.image:
-src: $assets.files.static.bgimage.jpeg
-anchor: parent
-top.px: 0
-left.px: 0
-height: auto
-width: fill-container
-z-index: -1
-
--- end: ftd.column
-
--- ftd.column:
-max-width.fixed.px: 1290
-align-self: center
-width: fill-container
-
--- header:
-logo: $page.site-logo
-site-name: $page.site-name
-site-url: $page.site-url
-contact-txt: $page.contact-text
-contact-url: $page.contact-text-url
-
--- end: ftd.column
-
--- ftd.column:
-children: $page.wrapper
-width: fill-container
-align-self: center
-align-content: center
-
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-
--- footer:
-copy: Copyright © 2023 - VirASTRAL Startup Studio. All rights reserved.
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: page
-
-
-
-
-
--- component header:
-optional string site-name:
-optional string site-url:
-optional ftd.image-src logo:
-optional string contact-txt:
-optional string contact-url:
-
-
--- ftd.row:
-width: fill-container
-border-bottom-width.px: 1
-border-color: $inherited.colors.border
-padding-vertical.px: 20
--- ftd.row:
-width: fill-container
-
-
--- ftd.image:
-if: {header.logo != NULL}
-src: $header.logo
-width: auto
-height.fixed.px: 64
-link: $header.site-url
-
-
--- ftd.text: $header.site-name
-if: {header.site-name != NULL}
-role: $inherited.types.heading-large
-color: $inherited.colors.text-strong
-link: $header.site-url 
-
-
--- end: ftd.row
-
--- ftd.row:
-align-self: center
-
--- button: $header.contact-txt
-role: small
-url: $header.contact-url
-
--- end: ftd.row
-
--- end: ftd.row
-
-
--- end: header
-
-
-
-
-
-
-
-
--- component container:
-optional caption title:
-optional body body:
-children wrap:
-integer padding-vertical: 120
-boolean widthfill: false
-string role: large
-optional ftd.color background-color: 
-ftd.color text-color: $inherited.colors.background.step-1
-
--- ftd.column:
-width: fill-container
-max-width.fixed.px if { !container.widthfill}: 1290
-color: $container.text-color
-spacing.fixed.px: 24
-align-content: center
-padding-vertical.px: $container.padding-vertical
-background.solid if { container.background-color != NULL }: $container.background-color
-
-
--- ftd.text: $container.title
-if: {container.role == "large"}
-role: $inherited.types.heading-medium
-max-width.fixed.percent: 65
-region: h2
-
--- ftd.text: $container.title
-if: {container.role == "small"}
-role: $inherited.types.heading-small
-max-width.fixed.percent: 65
-region: h3
-
--- ftd.text: $container.body
-role: $inherited.types.copy-regular
-max-width.fixed.percent: 65
-
--- ftd.row:
-wrap: true
-width: fill-container
-align-self: center
-align-content: center
-children: $container.wrap
-spacing.fixed.px: 32
-
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: container
-
-
-
-
-
-
-
--- component card:
-ftd.image-src avatar:
-caption title:
-string url:
-string profile:
-body body:
-
--- ftd.column:
-height.fixed.px: 600
-width.fixed.px: 400
-color: $inherited.colors.background.step-1
-align-content: center
-
-
--- ftd.image:
-src: $card.avatar
-width.fixed.px: 400
-height: auto
-margin-bottom.px: 16
-
--- ftd.text: $card.title
-role: $inherited.types.heading-tiny
-
--- ftd.text: $card.profile
-role: $inherited.types.copy-regular
-
--- ftd.text: $card.body
-role: $inherited.types.copy-regular
-margin-bottom.px: 24
-padding-horizontal.px: 10
-text-align: center
-
--- ftd.column:
-border-radius.percent: 100
-background.solid: $inherited.colors.background.step-1
-padding-vertical.px: 12
-padding-horizontal.px: 12
-align-self: center
-align-content: center
-
--- ftd.image:
-src: $assets.files.static.linkedin.svg
-width.fixed.px: 16
-height.fixed.px: 16
-align-self: center
-z-index: 1
-link: $card.url
-
--- end: ftd.column
-
-
--- end: ftd.column
-
-
-
--- end: card
-
-
-
--- component strong:
-caption title:
-
-
--- ftd.text: $strong.title
-role: $inherited.types.button-small
-color: $inherited.colors.text-strong
-
--- end: strong
-
-
-
--- component button:
-caption title:
-string url: /
-string role: small
-boolean $is-active: false
-
--- ftd.row:
-
--- ftd.row:
-if: {button.role == "small"}
-border-width.px: 1
-border-color: $inherited.colors.text-strong
-border-color if {button.is-active}: $inherited.colors.cta-primary.hover
-border-radius.px: 3 
-background.solid if {button.is-active}: $inherited.colors.cta-primary.hover
-$on-mouse-enter$: $ftd.set-bool($a = $button.is-active, v = true)
-$on-mouse-leave$: $ftd.set-bool($a = $button.is-active, v = false)
-padding-vertical.px: 6
-padding-horizontal.px: 15
-link: $button.url
-align-self: center
-
--- ftd.text: $button.title
-role: $inherited.types.button-small
-color: $inherited.colors.text-strong
-white-space: nowrap
-
--- end: ftd.row
-
--- ftd.row:
-if: {button.role == "medium"}
-background.solid: $inherited.colors.custom.seven
-background.solid if {button.is-active}: $inherited.colors.custom.four
-$on-mouse-enter$: $ftd.set-bool($a = $button.is-active, v = true)
-$on-mouse-leave$: $ftd.set-bool($a = $button.is-active, v = false)
-border-radius.px: 3 
-padding-vertical.px: 12
-padding-horizontal.px: 16
-link: $button.url
-align-self: center
-
--- ftd.text: $button.title
-role: $inherited.types.button-medium
-color: $inherited.colors.text-strong
-white-space: nowrap
-
--- end: ftd.row
-
-
--- ftd.row:
-if: {button.role == "large"}
-border-radius.px: 3 
-background.solid: $inherited.colors.custom.seven
-background.solid if {button.is-active}: $inherited.colors.custom.four
-$on-mouse-enter$: $ftd.set-bool($a = $button.is-active, v = true)
-$on-mouse-leave$: $ftd.set-bool($a = $button.is-active, v = false)
-padding-vertical.px: 13
-padding-horizontal.px: 40
-link: $button.url
-align-self: center
-
--- ftd.text: $button.title
-role: $inherited.types.button-large
-color: $inherited.colors.text-strong
-white-space: nowrap
-
--- end: ftd.row
--- end: ftd.row
-
--- end: button
-
-
-
-
-
-
-
-
-
-
--- component slider:
-ftd.image-src background-image: $assets.files.static.topography.svg
-children slider-wrap:
-optional caption title:
-optional body body:
-
--- ftd.column:
-width: fill-container
-spacing.fixed.px: 24
-padding-vertical.px: 130
-padding-horizontal.px: 24
-
-
--- ftd.column:
-width: fill-container
-anchor: parent
-top.px: 0
-left.px: 0
-z-index: -1
-height.fixed.px: 618
-overflow-y: hidden
-
--- ftd.image:
-src: $slider.background-image
-width: fill-container
-
--- end: ftd.column
-
--- ftd.text: $slider.title
-role: $inherited.types.heading-small
-color: $inherited.colors.background.step-1
-width: fill-container
-text-align: center
-
-
--- ftd.row:
-width: fill-container
-padding-vertical.px: 24
-spacing.fixed.px: 24
-
--- ftd.image:
-src: $assets.files.static.left.png
-width.fixed.px: 20
-height.fixed.px: 20
-align-self: center
-
--- ftd.row:
-overflow-x: auto
-children: $slider.slider-wrap
-align-self: center
-align-content: center
-spacing.fixed.px: 64
-padding-left.px: 300
-width.fixed.px: 1400
-
--- end: ftd.row
-
--- ftd.image:
-src: $assets.files.static.right.png
-width.fixed.px: 20
-height.fixed.px: 20
-align-self: center
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: slider
-
--- component image:
-ftd.image-src src:
-
-
--- ftd.image:
-src: $image.src
-width.fixed.px: 171
-height: auto
-
--- end: image
-
-
-
-
-
-
-
-
-
-
--- component hero:
-caption title:
-string cta-text:
-string cta-link:
-body body:
-integer width: 1290
-
--- ftd.column:
-height: fill-container
-padding-vertical.px: 100
-padding-bottom.px: 300
-padding-horizontal.px: 35
-align-self: center
-
--- ftd.column:
-width: fill-container
-max-width.fixed.px: $hero.width 
-align-content if { ftd.device == "mobile" }: center
-
--- ftd.column:
-width.fixed.percent if { ftd.device == "desktop" }: 55
-width.fixed.percent if { ftd.device == "mobile" }: 80
-align-content if { ftd.device == "mobile" }: center
-spacing.fixed.px: 32
-
--- ftd.text: $hero.title
-role: $inherited.types.heading-hero
-color: $inherited.colors.text-strong
-text-align if { ftd.device == "mobile" }: center
-region: h1
-
--- ftd.text:
-role: $inherited.types.copy-regular
-color: $inherited.colors.text-strong
-text-align if { ftd.device == "mobile" }: center
-
-$hero.body
-
--- button: $hero.cta-text
-role: large
-url: $hero.cta-link
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: hero
-
-
-
-
-
-
-
-
-
-
--- component footer:
-string copy:
-string powered-by: Powered By:
-
--- ftd.column:
-width: fill-container
-padding-vertical.px: 25
-align-content: center
-
--- ftd.column:
-align-content: center
-
--- ftd.text: 
-text: $footer.copy
-role: $inherited.types.copy-regular
-
--- ftd.row:
-spacing.fixed.px: 12
-align-content: center
-margin-top.px: 12
-
--- ftd.text: 
-text: $footer.powered-by
-role: $inherited.types.fine-print
-
--- ftd.image:
-src: https://fastn.io/-/fastn.io/images/fastn.svg
-link: https://github.com/fastn-stack/fastn/
-height.fixed.px: 16
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: footer

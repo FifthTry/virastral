@@ -1,6 +1,6 @@
 -- import: fifthtry.github.io/virastral-template/assets
 -- import: fifthtry.github.io/raleway-typography as typo
-
+-- import: fifthtry.github.io/default-cs as cs
 
 -- page:
 contact-text-url: mailto:invest@virastral.com
@@ -130,7 +130,7 @@ string contact-text: Contact Us
 string contact-text-url: /
 children wrapper:
 ftd.type-data types: $typo.types
-ftd.color-scheme colors: $ftd.default-colors
+ftd.color-scheme colors: $cs.main
 
 -- ftd.column:
 width: fill-container
@@ -601,8 +601,6 @@ align-content: center
 -- ftd.text: 
 text: $footer.copy
 role: $inherited.types.copy-regular
-color: $inherited.colors.text-strong.light
-
 
 -- end: ftd.column
 

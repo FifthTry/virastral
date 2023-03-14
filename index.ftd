@@ -451,28 +451,58 @@ optional body body:
 -- ftd.column:
 width: fill-container
 spacing.fixed.px: 24
+padding-vertical.px: 130
+padding-horizontal.px: 24
+
+
+-- ftd.column:
+width: fill-container
+anchor: parent
+top.px: 0
+left.px: 0
+z-index: -1
+height.fixed.px: 618
+overflow-y: hidden
+
+-- ftd.image:
+src: $slider.background-image
+width: fill-container
+
+-- end: ftd.column
 
 -- ftd.text: $slider.title
 role: $inherited.types.heading-small
-color: $inherited.colors.text-strong
+color: $inherited.colors.background.step-1
+width: fill-container
+text-align: center
+
 
 -- ftd.row:
 width: fill-container
-
+padding-vertical.px: 24
+padding-horizontal.px: 24
 
 -- ftd.image:
 src: $assets.files.static.left.png
-
+width.fixed.px: 20
+height.fixed.px: 20
+align-self: center
 
 -- ftd.row:
 width.fixed.px: 1400
 overflow-x: auto
 children: $slider.slider-wrap
+align-self: center
+align-content: center
+spacing.fixed.px: 24
 
 -- end: ftd.row
 
 -- ftd.image:
 src: $assets.files.static.right.png
+width.fixed.px: 20
+height.fixed.px: 20
+align-self: center
 
 -- end: ftd.row
 
@@ -510,7 +540,7 @@ integer width: 1290
 -- ftd.column:
 height: fill-container
 padding-vertical.px: 100
-padding-bottom.px: 300
+padding-bottom.px: 450
 padding-horizontal.px: 35
 align-self: center
 

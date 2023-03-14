@@ -25,6 +25,60 @@ url: /
 
 -- end: container
 
+-- slider: Experiences and Investments
+
+
+-- image:
+src: $assets.files.static.logo-akamai-1.png
+
+-- image:
+src: $assets.files.static.logo-aol-1.png
+
+
+-- image:
+src: $assets.files.static.logo-babblebots.png
+
+
+-- image:
+src: $assets.files.static.logo-entrust_lockup-2.svg
+
+
+-- image:
+src: $assets.files.static.logo-faballey-1.png
+
+-- image:
+src: $assets.files.static.logo-flexmoney-1.png
+
+-- image:
+src: $assets.files.static.logo-indus-1.jpg
+
+-- image:
+src: $assets.files.static.logopalm.png
+
+-- image:
+src: $assets.files.static.logo-veritas-1.png
+
+-- image:
+src: $assets.files.static.logo-Sun-1.png
+
+-- image:
+src: $assets.files.static.logo-symantec-1.png
+
+-- image:
+src: $assets.files.static.logo-veritas-1.png
+
+
+-- image:
+src: $assets.files.static.logo-Meta-1.png
+
+
+-- image:
+src: $assets.files.static.logo-netscape-1.png
+
+-- image:
+src: $assets.files.static.logo-nftically.png
+-- end: slider
+
 -- container: Are you a Builder?
 background-color: $inherited.colors.background.step-1
 text-color: $inherited.colors.text-strong
@@ -40,6 +94,9 @@ role: medium
 
 
 -- end: container
+
+
+
 
 -- end: page
 
@@ -358,3 +415,53 @@ white-space: nowrap
 -- end: ftd.row
 
 -- end: button
+
+
+-- component slider:
+ftd.image-src background-image: $assets.files.static.topography.svg
+children slider-wrap:
+optional caption title:
+optional body body:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 24
+
+-- ftd.text: $slider.title
+role: $inherited.types.heading-small
+color: $inherited.colors.text-strong
+
+-- ftd.row:
+width: fill-container
+
+
+-- ftd.image:
+src: $assets.files.static.left.png
+
+
+-- ftd.row:
+width.fixed.px: 1400
+overflow-x: auto
+children: $slider.slider-wrap
+
+-- end: ftd.row
+
+-- ftd.image:
+src: $assets.files.static.right.png
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: slider
+
+-- component image:
+ftd.image-src src:
+
+
+-- ftd.image:
+src: $image.src
+width.fixed.px: 171
+height: auto
+
+-- end: image

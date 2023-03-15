@@ -27,9 +27,14 @@ children wrapper:
 boolean navbar: false
 ftd.type-data types: $typo.types
 ftd.color-scheme colors: $cs.main
+boolean docs: false
 
 -- ftd.column:
 width: fill-container
+
+-- ftd.column:
+width: fill-container
+background.solid if { page.body != NULL }: $inherited.colors.background.base
 
 -- ftd.column:
 if: { ftd.device != "mobile" }
@@ -37,6 +42,7 @@ width: fill-container
 height: auto
 
 -- ftd.image:
+if: { $page.body == NULL }
 src: $assets.files.static.bgimage.jpeg
 anchor: parent
 top.px: 0
@@ -58,6 +64,7 @@ z-index: -1
 overflow-x: hidden
 
 -- ftd.image:
+if: { $page.body == NULL }
 src: $assets.files.static.bgimage.jpeg
 height: fill-container
 margin-left.px: -400
@@ -81,16 +88,40 @@ navbar: $page.navbar
 -- end: ftd.column
 
 -- ftd.column:
+width: fill-container
+max-width.fixed.px: 1290
+align-self: center
+padding-vertical.px: 48
+
+-- ftd.text: $page.title
+if: { $page.title != NULL }
+role: $inherited.types.heading-large
+color: $inherited.colors.text-strong.dark
+
+-- ftd.text: 
+if: { $page.body != NULL }
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong.dark
+margin-top.px: 32
+
+$page.body
+
+-- end: ftd.column
+
+-- ftd.column:
 children: $page.wrapper
 width: fill-container
 align-self: center
 align-content: center
+max-width.fixed.px: 1290
 
+-- end: ftd.column
 
 -- end: ftd.column
 
 -- ftd.column:
 width: fill-container
+background.solid if { page.docs }: $inherited.colors.text-strong
 
 -- footer:
 copy: Copyright © 2023 - VirASTRAL Startup Studio. All rights reserved.
@@ -560,6 +591,7 @@ height.fixed.px: 16
 
 
 
+
 -- component sections-list:
 caption title:
 optional string url: /
@@ -584,6 +616,39 @@ padding-top.px: 7
 
 
 
+
+
+
+
+
+-- component markdown:
+caption or body body:
+
+-- tf.markdown:
+
+$markdown.body
+
+
+-- end: markdown
+
+
+
+
+
+
+
+
+
+
+-- component h0:
+caption title:
+optional body body:
+
+-- tf.h0: $h0.title
+
+$h0.body
+
+-- end: h0
 
 
 
@@ -644,6 +709,42 @@ $sidebar-open: $header.sidebar-open
 -- end: ftd.column
 
 -- end: header
+
+
+
+
+
+
+
+
+
+-- component h1:
+caption title:
+optional body body:
+
+-- tf.h1: $h1.title
+
+$h1.body
+
+-- end: h1
+
+
+
+
+
+
+
+
+
+-- component h2:
+caption title:
+optional body body:
+
+-- tf.h2: $h2.title
+
+$h2.body
+
+-- end: h2
 
 
 
@@ -861,3 +962,14 @@ $on-click$: $ftd.toggle($a = $header-mobile.sidebar-open)
 -- end: ftd.row
 
 -- end: header-mobile
+
+-- component h3:
+caption title:
+optional body body:
+
+-- tf.h3: $h3.title
+
+$h3.body
+
+-- end: h3
+

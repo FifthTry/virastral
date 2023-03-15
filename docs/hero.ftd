@@ -1,0 +1,63 @@
+-- import: fifthtry.github.io/virastral/assets
+-- import: fifthtry.github.io/virastral/lib
+
+
+
+-- ft.page: VirASTRAL Hero 
+site-logo: https://fifthtry.github.io/virastral/-/fifthtry.github.io/virastral/static/logo.png
+colors: $cs.main
+
+
+-- pd.package: `hero`
+name: fifthtry.github.io/virastral
+
+We have created hero component which can be used as part of page components.
+
+To use virastral components on your web package, add below into FASTN.ftd file:
+
+-- cb.code:
+lang: ftd
+
+\-- fastn.dependency: fifthtry.github.io/virastral
+\-- fastn.auto-import: fifthtry.github.io/virastral/lib
+
+-- ftd.column:
+id: hero-component
+-- end: ftd.column
+
+-- lib.h2: `hero` component
+
+`hero` can be added inside `page` component or can be used as an individual
+component. 
+
+-- cb.rendered:
+
+-- cb.rendered.input:
+
+\-- lib.hero: For Brave Entrepreneurs Shooting for the Stars
+cta-text: Get In Touch
+cta-link: mailto:invest@virastral.com
+
+VirASTRAL is a founder-led early stage startup studio focused on helping
+fellow founders build world-shaping Generative AI, Web3 and AI SaaS 
+companies from India and other emerging markets. We are extremely 
+selective, looking to provide the needed mentorship, connections and 
+funding for innovation obsessed founding teams creating disruptive and delightful products.
+
+-- cb.rendered.output:
+
+-- lib.hero: For Brave Entrepreneurs Shooting for the Stars
+cta-text: Get In Touch
+cta-link: mailto:invest@virastral.com
+
+VirASTRAL is a founder-led early stage startup studio focused on helping fellow
+founders build world-shaping Generative AI, Web3 and AI SaaS companies from
+India and other emerging markets. We are extremely selective, looking to
+provide the needed mentorship, connections and funding for innovation obsessed
+founding teams creating disruptive and delightful products.
+
+-- end: cb.rendered.output
+
+-- end: cb.rendered
+
+-- end: ft.page

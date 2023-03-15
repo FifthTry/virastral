@@ -1,0 +1,66 @@
+-- import: fifthtry.github.io/virastral/assets
+-- import: fifthtry.github.io/virastral/lib
+
+
+
+-- ft.page: VirASTRAL Cards 
+site-logo: https://fifthtry.github.io/virastral/-/fifthtry.github.io/virastral/static/logo.png
+colors: $cs.main
+
+
+-- pd.package: `card`
+name: fifthtry.github.io/virastral
+
+We have created card component which can be used as part of page components.
+
+To use virastral components on your web package, add below into FASTN.ftd file:
+
+-- cb.code:
+lang: ftd
+
+\-- fastn.dependency: fifthtry.github.io/virastral
+\-- fastn.auto-import: fifthtry.github.io/virastral/lib
+
+-- ftd.column:
+id: card-component
+-- end: ftd.column
+
+-- lib.h2: `card` component
+
+`card` can be added inside `page` OR inside `about` component or can be used as 
+an individual component. 
+
+-- cb.rendered:
+
+-- cb.rendered.input:
+
+\-- lib.card: Ravi Sundararajan
+avatar: $assets.files.static.ravi.jpeg
+profile: **Managing Partner, CEO**
+url: https://www.linkedin.com/in/ravisundararajan/
+
+*Former COO at GupShup. Pre-IPO Exec at Akamai. VP at Palm/HP. McKinsey. 
+Harvard MBA*
+
+-- cb.rendered.output:
+
+-- ftd.column:
+width: fill-container
+background.solid: $inherited.colors.text-strong
+align-content: center
+padding-vertical.px: 12
+
+-- lib.card: Ravi Sundararajan
+avatar: $assets.files.static.ravi.jpeg
+profile: **Managing Partner, CEO**
+url: https://www.linkedin.com/in/ravisundararajan/
+
+* Former COO at GupShup. Pre-IPO Exec at Akamai. VP at Palm/HP. McKinsey. Harvard MBA *
+
+-- end: ftd.column
+
+-- end: cb.rendered.output
+
+-- end: cb.rendered
+
+-- end: ft.page

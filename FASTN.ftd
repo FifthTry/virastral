@@ -6,7 +6,6 @@
 -- fastn.dependency: fifthtry.github.io/package-doc
 -- fastn.dependency: fifthtry.github.io/default-cs
 
-
 -- fastn.auto-import: fifthtry.github.io/package-doc/code-block as cb
 -- fastn.auto-import: fifthtry.github.io/package-doc/typography as tf
 -- fastn.auto-import: fifthtry.github.io/package-doc/doc as pd
@@ -28,3 +27,4 @@
 - `about`: docs/about/
 - `card`: docs/card/
 - `card` inside `about` : docs/about-card/
+

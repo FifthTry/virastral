@@ -29,10 +29,12 @@ id: card-inside-about
 -- lib.h2: `card` component
 
 `card` can be added inside `page` OR inside `about` component or can be used as 
-an individual component. Since, you are watching this component with sidebar 
-and toc, its vertically aligns due to less space available on this page. But
+an individual component. 
+
+Since, you are watching this component with sidebar 
+and toc, it's vertically aligned due to less space available on this page. But
 on full page it can be seen aligned horizontally as it have more width to 
-accomodate both cards.
+accommodate both cards.
 
 [See it on Full Page](https://fifthtry.github.io/virastral/index.html#meet-virastral)
 

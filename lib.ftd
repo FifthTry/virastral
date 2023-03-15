@@ -1,6 +1,11 @@
 -- import: fifthtry.github.io/virastral/assets
 -- import: fifthtry.github.io/raleway-typography as typo
 -- import: fifthtry.github.io/default-cs as cs
+-- import: fastn/processors as pr
+
+-- pr.sitemap-data sitemap:
+$processor$: pr.full-sitemap
+
 
 
 
@@ -15,9 +20,11 @@ optional body body:
 ftd.image-src site-logo:  $assets.files.static.logo.png
 string site-url:  /
 optional string site-name:
+pr.toc-item list sections: $sitemap.sections
 string contact-text: Contact Us
 string contact: /
 children wrapper:
+boolean navbar: false
 ftd.type-data types: $typo.types
 ftd.color-scheme colors: $cs.main
 boolean docs: false
@@ -45,7 +52,6 @@ width: fill-container
 z-index: -1
 
 -- end: ftd.column
-
 
 -- ftd.column:
 if: { ftd.device == "mobile" }
@@ -76,6 +82,8 @@ site-name: $page.site-name
 site-url: $page.site-url
 contact-txt: $page.contact-text
 contact-url: $page.contact
+sections: $page.sections
+navbar: $page.navbar
 
 -- end: ftd.column
 
@@ -123,119 +131,6 @@ copy: Copyright © 2023 - VirASTRAL Startup Studio. All rights reserved.
 -- end: ftd.column
 
 -- end: page
-
-
-
-
-
--- component header:
-optional string site-name:
-optional string site-url:
-optional ftd.image-src logo:
-optional string contact-txt:
-optional string contact-url:
-
--- ftd.row:
-width: fill-container
-border-bottom-width.px: 1
-border-color: $inherited.colors.border
-padding-vertical.px: 20
-padding-horizontal.px if { ftd.device == "mobile" }: 24
-
--- ftd.row:
-width: fill-container
-
--- ftd.image:
-if: {header.logo != NULL}
-src: $header.logo
-width: auto
-height.fixed.px: 64
-link: $header.site-url
-
-
--- ftd.text: $header.site-name
-if: {header.site-name != NULL}
-role: $inherited.types.heading-large
-color: $inherited.colors.text-strong
-link: $header.site-url 
-
-
--- end: ftd.row
-
--- ftd.row:
-align-self: center
-
--- button: $header.contact-txt
-role: small
-url: $header.contact-url
-
--- end: ftd.row
-
--- end: ftd.row
-
-
--- end: header
-
-
-
-
-
-
-
-
--- component container:
-optional caption title:
-optional body body:
-children wrap:
-integer padding-vertical: 120
-boolean widthfill: false
-string role: large
-optional ftd.color background-color: 
-ftd.color text-color: $inherited.colors.background.step-1
-
--- ftd.column:
-width: fill-container
-max-width.fixed.px if { !container.widthfill}: 1290
-color: $container.text-color
-spacing.fixed.px: 24
-align-content: center
-padding-vertical.px: $container.padding-vertical
-padding-vertical.px if { ftd.device == "mobile" }: 90
-padding-horizontal.px if { ftd.device == "mobile" }: 24
-background.solid if { container.background-color != NULL }: $container.background-color
-
-
--- ftd.text: $container.title
-if: {container.role == "large"}
-role: $inherited.types.heading-medium
-max-width.fixed.percent if { ftd.device != "mobile" }: 65
-region: h2
-
--- ftd.text: $container.title
-if: {container.role == "small"}
-role: $inherited.types.heading-small
-max-width.fixed.percent if { ftd.device != "mobile" }: 65
-region: h3
-
--- ftd.text: $container.body
-role: $inherited.types.copy-regular
-max-width.fixed.percent if { ftd.device != "mobile" }: 65
-text-align: center
-
--- ftd.row:
-wrap: true
-width: fill-container
-align-self: center
-align-content: center
-children: $container.wrap
-spacing.fixed.px: 32
-
--- end: ftd.row
-
--- end: ftd.column
-
--- end: container
-
 
 
 
@@ -339,12 +234,6 @@ spacing.fixed.px: 32
 
 
 
-
-
-
-
-
-
 -- component card:
 ftd.image-src avatar:
 caption title:
@@ -394,24 +283,10 @@ link: $card.url
 
 -- end: ftd.column
 
-
 -- end: ftd.column
-
-
 
 -- end: card
 
-
-
--- component strong:
-caption title:
-
-
--- ftd.text: $strong.title
-role: $inherited.types.button-small
-color: $inherited.colors.text-strong
-
--- end: strong
 
 
 
@@ -435,6 +310,15 @@ url: $button-medium.url
 
 -- end: button-medium
 
+
+
+
+
+
+
+
+
+
 -- component button:
 caption title:
 string url: /
@@ -453,6 +337,7 @@ background.solid if {button.is-active}: $inherited.colors.cta-primary.hover
 $on-mouse-enter$: $ftd.set-bool($a = $button.is-active, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $button.is-active, v = false)
 padding-vertical.px: 6
+padding-vertical.px if {ftd.device == " mobile"}: 5
 padding-horizontal.px: 15
 link: $button.url
 align-self: center
@@ -482,7 +367,6 @@ color: $inherited.colors.text-strong
 white-space: nowrap
 
 -- end: ftd.row
-
 
 -- ftd.row:
 if: {button.role == "large"}
@@ -549,7 +433,6 @@ color: $inherited.colors.background.step-1
 width: fill-container
 text-align: center
 
-
 -- ftd.row:
 width: fill-container
 padding-vertical.px: 24
@@ -569,6 +452,15 @@ spacing.fixed.px: 24
 -- end: ftd.column
 
 -- end: slider
+
+
+
+
+
+
+
+
+
 
 -- component image:
 caption ftd.image-src src:
@@ -699,6 +591,36 @@ height.fixed.px: 16
 
 
 
+
+-- component sections-list:
+caption title:
+optional string url: /
+boolean is-active: false
+
+-- ftd.column:
+
+-- ftd.text: $sections-list.title
+color:$inherited.colors.text-strong
+color if {sections-list.is-active}: $inherited.colors.cta-primary.base
+role: $inherited.types.copy-regular
+link: $sections-list.url
+width: fill-container
+white-space: nowrap
+padding-top.px: 7
+
+
+-- end: ftd.column
+
+-- end: sections-list
+
+
+
+
+
+
+
+
+
 -- component markdown:
 caption or body body:
 
@@ -727,6 +649,66 @@ optional body body:
 $h0.body
 
 -- end: h0
+
+
+
+
+
+
+
+-- component header:
+optional string site-name:
+optional string site-url:
+optional ftd.image-src logo:
+optional string contact-txt:
+optional string contact-url:
+pr.toc-item list sections:
+boolean navbar:
+boolean $sidebar-open: false
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.column:
+if: { header.sidebar-open }
+width: fill-container
+background.solid: $inherited.colors.background.overlay
+height.fixed.calc: 100vh
+z-index: 10
+
+-- mobile-sidebar:
+if: { header.sidebar-open }
+$sidebar-open: $header.sidebar-open
+
+-- end: ftd.column
+
+-- menu-mobile:
+if: { header.sidebar-open }
+sections: $header.sections
+
+-- header-desktop:
+if: { ftd.device != "mobile" }
+site-name: $header.site-name
+site-url: $header.site-url
+logo: $header.logo
+contact-txt: $header.contact-txt
+contact-url: $header.contact-url
+sections: $header.sections
+navbar: $header.navbar
+
+-- header-mobile:
+if: { ftd.device == "mobile" }
+site-name: $header.site-name
+site-url: $header.site-url
+logo: $header.logo
+contact-txt: $header.contact-txt
+contact-url: $header.contact-url
+navbar: $header.navbar
+$sidebar-open: $header.sidebar-open
+
+-- end: ftd.column
+
+-- end: header
 
 
 
@@ -771,6 +753,216 @@ $h2.body
 
 
 
+
+
+-- component menu-mobile:
+pr.toc-item list sections:
+
+-- ftd.column:
+width.fixed.calc: 100% - 48px
+height.fixed.calc: 100vh - 0px
+anchor: window
+right.px: 0
+top.px: 0
+overflow-y: auto
+padding-top.px: 20
+padding-horizontal.px: 24
+background.solid: $inherited.colors.background.step-1
+z-index: 14
+
+-- ftd.column:
+if: { !ftd.is_empty(menu-mobile.sections) }
+width: fill-container
+padding-bottom.px: 24
+
+-- sections-list: $obj.title
+$loop$: $menu-mobile.sections as $obj
+is-active: $obj.is-active
+url: $obj.url
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: menu-mobile
+
+
+
+
+
+
+
+
+
+
+-- component mobile-sidebar:
+boolean $sidebar-open:
+
+-- ftd.column:
+anchor: window
+top.px: 0
+bottom.px: 0
+left.px: 0
+right.px: 0
+background.solid:  $inherited.colors.background.overlay
+z-index: 1
+$on-click$: $ftd.toggle($a = $mobile-sidebar.sidebar-open)
+
+-- ftd.image:
+src: $assets.files.static.cross.svg
+height.fixed.px: 24
+width: hug-content
+anchor: window
+left.px: 16
+top.px: 20
+
+-- end: ftd.column
+
+-- end: mobile-sidebar
+
+
+
+
+
+
+
+
+
+
+-- component header-desktop:
+optional string site-name:
+optional string site-url:
+optional ftd.image-src logo:
+optional string contact-txt:
+optional string contact-url:
+pr.toc-item list sections:
+boolean navbar:
+
+-- ftd.row:
+width: fill-container
+border-bottom-width.px: 1
+border-color: $inherited.colors.border
+padding-vertical.px: 20
+margin-left.px if { ftd.device == "mobile" }: 23
+margin-left.px if { ftd.device == "mobile" }: 23
+spacing: space-between
+
+-- ftd.row:
+width: fill-container
+
+-- ftd.image:
+if: {header-desktop.logo != NULL}
+src: $header-desktop.logo
+width: auto
+height.fixed.px: 64
+height.fixed.px if {ftd.device == "mobile"}: 30
+link: $header-desktop.site-url
+
+-- ftd.text: $header-desktop.site-name
+if: {header-desktop.site-name != NULL}
+role: $inherited.types.heading-large
+color: $inherited.colors.text-strong
+link: $header-desktop.site-url 
+
+-- end: ftd.row
+
+-- ftd.row:
+align-self: center
+spacing.fixed.px: 32
+
+-- ftd.row:
+if: {header-desktop.navbar}
+width: fill-container
+spacing.fixed.px: 16
+
+-- sections-list: $obj.title
+url: $obj.url
+is-active: $obj.is-active
+$loop$: $header-desktop.sections as $obj
+
+-- end: ftd.row
+
+-- button: $header-desktop.contact-txt
+role: small
+url: $header-desktop.contact-url
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: header-desktop
+
+
+
+
+
+
+
+
+
+
+-- component header-mobile:
+optional string site-name:
+optional string site-url:
+optional ftd.image-src logo:
+optional string contact-txt:
+optional string contact-url:
+boolean navbar: 
+boolean $sidebar-open:
+
+-- ftd.row:
+width: fill-container
+padding-horizontal.px: 23
+
+-- ftd.row:
+width: fill-container 
+border-bottom-width.px: 1
+border-color: $inherited.colors.border
+padding-vertical.px: 17
+spacing: space-between
+
+-- ftd.row:
+width: fill-container
+
+-- ftd.image:
+if: { header-mobile.logo != NULL }
+src: $header-mobile.logo
+width: auto
+height.fixed.px: 30
+link: $header-mobile.site-url
+
+-- ftd.text: $header-mobile.site-name
+if: { header-mobile.site-name != NULL }
+role: $inherited.types.heading-large
+color: $inherited.colors.text-strong
+link: $header-mobile.site-url 
+
+-- end: ftd.row
+
+-- ftd.row:
+align-self: center
+spacing.fixed.px: 16
+
+-- button: $header-mobile.contact-txt
+role: small
+url: $header-mobile.contact-url
+
+-- ftd.image:
+if: { header-mobile.navbar }
+src: $assets.files.static.menu.svg
+width.fixed.px: 30
+height: auto
+align-self: center
+$on-click$: $ftd.toggle($a = $header-mobile.sidebar-open)
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: header-mobile
+
 -- component h3:
 caption title:
 optional body body:
@@ -780,3 +972,4 @@ optional body body:
 $h3.body
 
 -- end: h3
+

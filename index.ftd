@@ -1,110 +1,76 @@
--- import: fifthtry.github.io/virastral-template/assets
--- import: fifthtry.github.io/virastral-template/lib as fastn
+-- import: fifthtry.github.io/virastral/assets
+-- import: fifthtry.github.io/virastral/lib
 
--- fastn.page:
-contact-text-url: mailto:invest@virastral.com
+-- lib.page:
+contact: mailto:invest@virastral.com
 
--- fastn.hero: For Brave Entrepreneurs Shooting for the Stars
+-- lib.hero: For Brave Entrepreneurs Shooting for the Stars
 cta-text: Get In Touch
 cta-link: mailto:invest@virastral.com
 
+VirASTRAL is a founder-led early stage startup studio focused on helping fellow
+founders build world-shaping Generative AI, Web3 and AI SaaS companies from
+India and other emerging markets. We are extremely selective, looking to
+provide the needed mentorship, connections and funding for innovation obsessed
+founding teams creating disruptive and delightful products.
 
-VirASTRAL is a founder-led early stage startup studio focused on helping fellow founders build world-shaping Generative AI, Web3 and AI SaaS companies from India and other emerging markets. We are extremely selective, looking to provide the needed mentorship, connections and funding for innovation obsessed founding teams creating disruptive and delightful products.
+-- end: lib.hero
 
--- end: fastn.hero
+-- lib.about: Meet VirASTRAL
 
-
--- fastn.container: Meet VirASTRAL
-
-We have over 30 years of experience operating and scaling high growth public companies and venture backed startups. Our expertise in **scaling tech stacks**  and **driving** **new product adoption**,  **sales growth**  and **sustained profitability**  for  **Internet Infrastructure, SaaS, Mobility, Social Media, eCommerce and AI businesses** , enables us to provide world-class advice to our founders. We have invested in and mentored startups from seed stage to venture funding and created meaningful exits including IPOs and acquisitions. 
+We have over 30 years of experience operating and scaling high growth public
+companies and venture backed startups. Our expertise in **scaling tech stacks**
+and **driving** **new product adoption**,  **sales growth**  and **sustained
+profitability**  for  **Internet Infrastructure, SaaS, Mobility, Social Media,
+eCommerce and AI businesses** , enables us to provide world-class advice to our
+founders. We have invested in and mentored startups from seed stage to venture
+funding and created meaningful exits including IPOs and acquisitions. 
  
--- fastn.card: Ravi Sundararajan
+-- lib.card: Ravi Sundararajan
 avatar: $assets.files.static.ravi.jpeg
 profile: **Managing Partner, CEO**
 url: https://www.linkedin.com/in/ravisundararajan/
 
-*Former COO at GupShup. Pre-IPO Exec at Akamai. VP at Palm/HP. McKinsey. Harvard MBA*
+*Former COO at GupShup. Pre-IPO Exec at Akamai. VP at Palm/HP. McKinsey. Harvard
+MBA*
 
--- fastn.card: Viswanath Ramachandran
+-- lib.card: Viswanath Ramachandran
 avatar: $assets.files.static.vishal.jpeg
 profile: **Managing Partner, CTO**
 url: https://www.linkedin.com/in/vishyr/
 
-*Former CTO at GupShup. Engineering Director at Meta. Netscape. CSE IIT Bombay. Ph.D. CS Brown*
+*Former CTO at GupShup. Engineering Director at Meta. Netscape. CSE IIT Bombay.
+Ph.D. CS Brown*
 
--- end: fastn.container
+-- end: lib.about
 
--- fastn.slider: **Experiences and Investments**
+-- lib.slider: **Experiences and Investments**
 
--- fastn.image:
-src: $assets.files.static.logo-akamai-1.png
+-- lib.image: $assets.files.static.logo-nftically.png
+-- lib.image: $assets.files.static.logo-babblebots.png
+-- lib.image: $assets.files.static.logo-flexmoney-1.png
+-- lib.image: $assets.files.static.logo-gupshup.png
+-- lib.image: $assets.files.static.logo-akamai-1.png
+-- lib.image: $assets.files.static.logo-Meta-1.png
+-- lib.image: $assets.files.static.logo-netscape-1.png
+-- lib.image: $assets.files.static.logo-Sun-1.png
+-- lib.image: $assets.files.static.logo-aol-1.png
+-- lib.image: $assets.files.static.logo-veritas-1.png
+-- lib.image: $assets.files.static.logo-symantec-1.png
+-- lib.image: $assets.files.static.logo-palm.png
+-- lib.image: $assets.files.static.logo-entrust_lockup-2.svg
+-- lib.image: $assets.files.static.logo-faballey-1.png
+-- lib.image: $assets.files.static.logo-indus-1.jpg
 
--- fastn.image:
-src: $assets.files.static.logo-aol-1.png
+-- end: lib.slider
 
--- fastn.image:
-src: $assets.files.static.logo-babblebots.png
-
--- fastn.image:
-src: $assets.files.static.logo-entrust_lockup-2.svg
-
--- fastn.image:
-src: $assets.files.static.logo-faballey-1.png
-
--- fastn.image:
-src: $assets.files.static.logo-flexmoney-1.png
-
--- fastn.image:
-src: $assets.files.static.logo-indus-1.jpg
-
--- fastn.image:
-src: $assets.files.static.logopalm.png
-
--- fastn.image:
-src: $assets.files.static.logo-veritas-1.png
-
--- fastn.image:
-src: $assets.files.static.logo-Sun-1.png
-
--- fastn.image:
-src: $assets.files.static.logo-symantec-1.png
-
--- fastn.image:
-src: $assets.files.static.logo-veritas-1.png
-
-
--- fastn.image:
-src: $assets.files.static.logo-Meta-1.png
-
-
--- fastn.image:
-src: $assets.files.static.logo-netscape-1.png
-
--- fastn.image:
-src: $assets.files.static.logo-nftically.png
-
--- end: fastn.slider
-
--- fastn.container: Are you a Builder?
-background-color: $inherited.colors.background.step-1
-text-color: $inherited.colors.text-strong
-widthfill: true
-role: small
-
+-- lib.get-in-touch: Are you a Builder?
 
 Get in touch. We love meeting like minded Founders
 
-
--- fastn.button: Send a Ping
-role: medium
+-- lib.button-medium: Send a Ping
 url: mailto:invest@virastral.com
 
+-- end: lib.get-in-touch
 
--- end: fastn.container
-
-
-
-
--- end: fastn.page
-
-
+-- end: lib.page

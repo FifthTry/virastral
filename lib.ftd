@@ -1,4 +1,4 @@
--- import: fifthtry.github.io/virastral-template/assets
+-- import: fifthtry.github.io/virastral/assets
 -- import: fifthtry.github.io/raleway-typography as typo
 -- import: fifthtry.github.io/default-cs as cs
 
@@ -16,7 +16,7 @@ ftd.image-src site-logo:  $assets.files.static.logo.png
 string site-url:  /
 optional string site-name:
 string contact-text: Contact Us
-string contact-text-url: /
+string contact: /
 children wrapper:
 ftd.type-data types: $typo.types
 ftd.color-scheme colors: $cs.main
@@ -70,7 +70,7 @@ logo: $page.site-logo
 site-name: $page.site-name
 site-url: $page.site-url
 contact-txt: $page.contact-text
-contact-url: $page.contact-text-url
+contact-url: $page.contact
 
 -- end: ftd.column
 
@@ -213,6 +213,109 @@ spacing.fixed.px: 32
 
 
 
+
+
+
+
+-- component about:
+optional caption title:
+optional body body:
+children wrap:
+
+-- ftd.column:
+width: fill-container
+max-width.fixed.px: 1290
+spacing.fixed.px: 24
+align-content: center
+padding-vertical.px: 120
+padding-horizontal.px if { ftd.device == "mobile" }: 24
+
+-- ftd.text: $about.title
+role: $inherited.types.heading-medium
+max-width.fixed.percent if { ftd.device != "mobile" }: 65
+region: h2
+
+-- ftd.text: $about.body
+role: $inherited.types.copy-regular
+max-width.fixed.percent if { ftd.device != "mobile" }: 65
+text-align: center
+
+-- ftd.row:
+wrap: true
+width: fill-container
+align-self: center
+align-content: center
+children: $about.wrap
+spacing.fixed.px: 32
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: about
+
+
+
+
+
+
+
+
+
+
+-- component get-in-touch:
+optional caption title:
+optional body body:
+children wrap:
+
+-- ftd.column:
+width: fill-container
+color: $inherited.colors.text-strong
+spacing.fixed.px: 24
+align-content: center
+padding-vertical.px: 120
+padding-horizontal.px if { ftd.device == "mobile" }: 24
+background.solid: $inherited.colors.background.step-1
+
+-- ftd.text: $get-in-touch.title
+role: $inherited.types.heading-small
+max-width.fixed.percent if { ftd.device != "mobile" }: 65
+region: h3
+
+-- ftd.text: $get-in-touch.body
+role: $inherited.types.copy-regular
+max-width.fixed.percent if { ftd.device != "mobile" }: 65
+text-align: center
+
+-- ftd.row:
+wrap: true
+width: fill-container
+align-self: center
+align-content: center
+children: $get-in-touch.wrap
+spacing.fixed.px: 32
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: get-in-touch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -- component card:
 ftd.image-src avatar:
 caption title:
@@ -282,6 +385,26 @@ color: $inherited.colors.text-strong
 -- end: strong
 
 
+
+
+
+
+
+
+
+-- component button-medium:
+caption title:
+string url: /
+
+-- ftd.column:
+
+-- button: $button-medium.title
+role: medium
+url: $button-medium.url
+
+-- end: ftd.column
+
+-- end: button-medium
 
 -- component button:
 caption title:
@@ -376,7 +499,6 @@ padding-vertical.px: 130
 padding-vertical.px if { ftd.device == "mobile" }: 90
 padding-horizontal.px: 24
 
-
 -- ftd.column:
 width: fill-container
 anchor: parent
@@ -404,27 +526,14 @@ width: fill-container
 padding-vertical.px: 24
 spacing.fixed.px: 24
 
--- ftd.image:
-src: $assets.files.static.left.png
-width.fixed.px: 20
-height.fixed.px: 20
-align-self: center
-
 -- ftd.row:
 overflow-x: auto
 children: $slider.slider-wrap
 align-self: center
 spacing.fixed.px if { ftd.device != "mobile" }: 64
 spacing.fixed.px: 24
-width.fixed.percent if { ftd.device != "mobile" }: 94
 
 -- end: ftd.row
-
--- ftd.image:
-src: $assets.files.static.right.png
-width.fixed.px: 20
-height.fixed.px: 20
-align-self: center
 
 -- end: ftd.row
 
@@ -433,8 +542,7 @@ align-self: center
 -- end: slider
 
 -- component image:
-ftd.image-src src:
-
+caption ftd.image-src src:
 
 -- ftd.image:
 src: $image.src

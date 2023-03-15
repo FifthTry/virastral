@@ -171,6 +171,7 @@ color: $container.text-color
 spacing.fixed.px: 24
 align-content: center
 padding-vertical.px: $container.padding-vertical
+padding-vertical.px if { ftd.device == "mobile" }: 90
 padding-horizontal.px if { ftd.device == "mobile" }: 24
 background.solid if { container.background-color != NULL }: $container.background-color
 
@@ -372,6 +373,7 @@ optional body body:
 width: fill-container
 spacing.fixed.px: 24
 padding-vertical.px: 130
+padding-vertical.px if { ftd.device == "mobile" }: 90
 padding-horizontal.px: 24
 
 
@@ -412,10 +414,9 @@ align-self: center
 overflow-x: auto
 children: $slider.slider-wrap
 align-self: center
-align-content: center
-spacing.fixed.px: 64
-padding-left.px if { ftd.device != "mobile" }: 300
-width.fixed.px if { ftd.device != "mobile" }: 1400
+spacing.fixed.px if { ftd.device != "mobile" }: 64
+spacing.fixed.px: 24
+width.fixed.percent if { ftd.device != "mobile" }: 94
 
 -- end: ftd.row
 
@@ -439,6 +440,7 @@ ftd.image-src src:
 src: $image.src
 width.fixed.px: 171
 height: auto
+align-self: center
 
 -- end: image
 

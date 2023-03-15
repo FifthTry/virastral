@@ -1,0 +1,68 @@
+-- import: fifthtry.github.io/virastral/assets
+-- import: fifthtry.github.io/virastral/lib
+
+
+
+-- ft.page: VirASTRAL Get-in-touch 
+site-logo: https://fifthtry.github.io/virastral/-/fifthtry.github.io/virastral/static/logo.png
+colors: $cs.main
+
+
+-- pd.package: `get-in-touch`
+name: fifthtry.github.io/virastral
+
+We have created get-in-touch component which can be used as part of page 
+components.
+
+To use virastral components on your web package, add below into FASTN.ftd file:
+
+-- cb.code:
+lang: ftd
+
+\-- fastn.dependency: fifthtry.github.io/virastral
+\-- fastn.auto-import: fifthtry.github.io/virastral/lib
+
+-- ftd.column:
+id: get-in-touch-component
+-- end: ftd.column
+
+-- lib.h2: `get-in-touch` component
+
+`get-in-touch` can be added inside `page` component or can be used as an 
+individual component. 
+
+-- cb.rendered:
+
+-- cb.rendered.input:
+
+\-- lib.get-in-touch: Are you a Builder?
+
+Get in touch. We love meeting like minded Founders
+
+\-- lib.button-medium: Send a Ping
+url: mailto:invest@virastral.com
+
+\-- end: lib.get-in-touch
+
+-- cb.rendered.output:
+
+-- ftd.column:
+width: fill-container
+background.solid: $inherited.colors.text-strong
+
+-- lib.get-in-touch: Are you a Builder?
+
+Get in touch. We love meeting like minded Founders
+
+-- lib.button-medium: Send a Ping
+url: mailto:invest@virastral.com
+
+-- end: lib.get-in-touch
+
+-- end: ftd.column
+
+-- end: cb.rendered.output
+
+-- end: cb.rendered
+
+-- end: ft.page

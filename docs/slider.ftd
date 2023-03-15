@@ -1,0 +1,104 @@
+-- import: fifthtry.github.io/virastral/assets
+-- import: fifthtry.github.io/virastral/lib
+
+
+
+-- ft.page: VirASTRAL Slider 
+site-logo: https://fifthtry.github.io/virastral/-/fifthtry.github.io/virastral/static/logo.png
+colors: $cs.main
+
+
+-- pd.package: `slider`
+name: fifthtry.github.io/virastral
+
+We have created slider component which can be used as part of page components.
+
+To use virastral components on your web package, add below into FASTN.ftd file:
+
+-- cb.code:
+lang: ftd
+
+\-- fastn.dependency: fifthtry.github.io/virastral
+\-- fastn.auto-import: fifthtry.github.io/virastral/lib
+
+-- ftd.column:
+id: slider-component
+-- end: ftd.column
+
+-- lib.h2: `slider` component
+
+`slider` can be added inside `page` component or can be used as an individual
+component. 
+
+-- cb.rendered:
+
+-- cb.rendered.input:
+
+\-- lib.slider: **Experiences and Investments**
+
+\-- lib.image: $assets.files.static.logo-nftically.png
+\-- lib.image: $assets.files.static.logo-babblebots.png
+\-- lib.image: $assets.files.static.logo-flexmoney-1.png
+\-- lib.image: $assets.files.static.logo-gupshup.png
+\-- lib.image: $assets.files.static.logo-akamai-1.png
+\-- lib.image: $assets.files.static.logo-Meta-1.png
+\-- lib.image: $assets.files.static.logo-netscape-1.png
+\-- lib.image: $assets.files.static.logo-Sun-1.png
+\-- lib.image: $assets.files.static.logo-aol-1.png
+\-- lib.image: $assets.files.static.logo-veritas-1.png
+\-- lib.image: $assets.files.static.logo-symantec-1.png
+\-- lib.image: $assets.files.static.logo-palm.png
+\-- lib.image: $assets.files.static.logo-entrust_lockup-2.svg
+\-- lib.image: $assets.files.static.logo-faballey-1.png
+\-- lib.image: $assets.files.static.logo-indus-1.jpg
+
+\-- end: lib.slider
+
+-- cb.rendered.output:
+
+-- ftd.column:
+width: fill-container
+background.solid: $inherited.colors.text-strong
+
+-- lib.slider: **Experiences and Investments**
+
+-- lib.image:
+src: $assets.files.static.logo-nftically.png
+-- lib.image:
+src: $assets.files.static.logo-babblebots.png
+-- lib.image: 
+src: $assets.files.static.logo-flexmoney.png
+-- lib.image: 
+src: $assets.files.static.logo-gupshup.png
+-- lib.image: 
+src: $assets.files.static.logo-akamai.png
+-- lib.image: 
+src: $assets.files.static.logo-meta.png
+-- lib.image: 
+src: $assets.files.static.logo-netscape.png
+-- lib.image: 
+src: $assets.files.static.logo-sun.png
+-- lib.image: 
+src: $assets.files.static.logo-aol.png
+-- lib.image: 
+src: $assets.files.static.logo-veritas.png
+-- lib.image: 
+src: $assets.files.static.logo-symantec.png
+-- lib.image: 
+src: $assets.files.static.logo-palm.png
+-- lib.image: 
+src: $assets.files.static.logo-entrust.svg
+-- lib.image: 
+src: $assets.files.static.logo-faballey.png
+-- lib.image: 
+src: $assets.files.static.logo-indus.jpg
+
+-- end: lib.slider
+
+-- end: ftd.column
+
+-- end: cb.rendered.output
+
+-- end: cb.rendered
+
+-- end: ft.page

@@ -3,9 +3,28 @@
 -- fastn.package: fifthtry.github.io/virastral
 
 -- fastn.dependency: fifthtry.github.io/raleway-typography
+-- fastn.dependency: fifthtry.github.io/package-doc
 -- fastn.dependency: fifthtry.github.io/default-cs
 
 
+-- fastn.auto-import: fifthtry.github.io/package-doc/code-block as cb
+-- fastn.auto-import: fifthtry.github.io/package-doc/typography as tf
+-- fastn.auto-import: fifthtry.github.io/package-doc/doc as pd
+-- fastn.auto-import: fifthtry.github.io/package-doc/forest-theme as ft
+-- fastn.auto-import: fifthtry.github.io/default-cs as cs
 
 
 
+
+
+-- fastn.sitemap:
+
+
+# Home: index.html
+
+- VirASTRAL components: docs/
+- `page`: docs/index.html
+- `hero`: docs/hero/
+- `about`: docs/about/
+- `card`: docs/card/
+- `card` inside `about` : docs/about-card/

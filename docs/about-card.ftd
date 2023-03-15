@@ -1,0 +1,115 @@
+-- import: fifthtry.github.io/virastral/assets
+-- import: fifthtry.github.io/virastral/lib
+
+
+
+-- ft.page: VirASTRAL Cards 
+site-logo: https://fifthtry.github.io/virastral/-/fifthtry.github.io/virastral/static/logo.png
+colors: $cs.main
+
+
+-- pd.package: `card` inside `about`
+name: fifthtry.github.io/virastral
+
+We have created card and about component which can be used as part of page OR
+inside `about` component.
+
+To use virastral components on your web package, add below into FASTN.ftd file:
+
+-- cb.code:
+lang: ftd
+
+\-- fastn.dependency: fifthtry.github.io/virastral
+\-- fastn.auto-import: fifthtry.github.io/virastral/lib
+
+-- ftd.column:
+id: card-inside-about
+-- end: ftd.column
+
+-- lib.h2: `card` component
+
+`card` can be added inside `page` OR inside `about` component or can be used as 
+an individual component. Since, you are watching this component with sidebar 
+and toc, its vertically aligns due to less space available on this page. But
+on full page it can be seen aligned horizontally as it have more width to 
+accomodate both cards.
+
+[See it on Full Page](https://fifthtry.github.io/virastral/index.html#meet-virastral)
+
+-- cb.rendered:
+
+-- cb.rendered.input:
+
+\-- lib.about: Meet VirASTRAL
+
+We have over 30 years of experience operating and scaling high growth
+public companies and venture backed startups. Our expertise
+in **scaling tech stacks** and **driving** **new product
+adoption**, **sales growth**  and **sustained profitability**
+for **Internet Infrastructure, SaaS, Mobility, Social Media, eCommerce
+and AI businesses** , enables us to provide world-class advice to our
+founders. We have invested in and mentored startups from seed stage to
+venture funding and created meaningful exits including IPOs and
+acquisitions. 
+ 
+\-- lib.card: Ravi Sundararajan
+avatar: $assets.files.static.ravi.jpeg
+profile: **Managing Partner, CEO**
+url: https://www.linkedin.com/in/ravisundararajan/
+
+*Former COO at GupShup. Pre-IPO Exec at Akamai. VP at Palm/HP. McKinsey. 
+Harvard MBA*
+
+\-- lib.card: Viswanath Ramachandran
+avatar: $assets.files.static.vishal.jpeg
+profile: **Managing Partner, CTO**
+url: https://www.linkedin.com/in/vishyr/
+
+*Former CTO at GupShup. Engineering Director at Meta. Netscape. 
+CSE IIT Bombay. Ph.D. CS Brown*
+
+\-- end: lib.about
+
+-- cb.rendered.output:
+
+-- ftd.column:
+width: fill-container
+background.solid: $inherited.colors.text-strong
+align-content: center
+padding-vertical.px: 12
+
+-- lib.about: Meet VirASTRAL
+
+We have over 30 years of experience operating and scaling high growth public
+companies and venture backed startups. Our expertise in **scaling tech stacks**
+and **driving** **new product adoption**,  **sales growth**  and **sustained
+profitability**  for  **Internet Infrastructure, SaaS, Mobility, Social Media,
+eCommerce and AI businesses** , enables us to provide world-class advice to our
+founders. We have invested in and mentored startups from seed stage to venture
+funding and created meaningful exits including IPOs and acquisitions. 
+ 
+-- lib.card: Ravi Sundararajan
+avatar: $assets.files.static.ravi.jpeg
+profile: **Managing Partner, CEO**
+url: https://www.linkedin.com/in/ravisundararajan/
+
+*Former COO at GupShup. Pre-IPO Exec at Akamai. VP at Palm/HP. McKinsey. Harvard
+MBA*
+
+-- lib.card: Viswanath Ramachandran
+avatar: $assets.files.static.vishal.jpeg
+profile: **Managing Partner, CTO**
+url: https://www.linkedin.com/in/vishyr/
+
+*Former CTO at GupShup. Engineering Director at Meta. Netscape. CSE IIT Bombay.
+Ph.D. CS Brown*
+
+-- end: lib.about
+
+-- end: ftd.column
+
+-- end: cb.rendered.output
+
+-- end: cb.rendered
+
+-- end: ft.page

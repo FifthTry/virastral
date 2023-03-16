@@ -687,82 +687,6 @@ $sidebar-open: $header.sidebar-open
 
 
 
--- component markdown:
-caption or body body:
-
--- tf.markdown:
-
-$markdown.body
-
-
--- end: markdown
-
-
-
-
-
-
-
-
-
-
--- component h0:
-caption title:
-optional body body:
-
--- tf.h0: $h0.title
-
-$h0.body
-
--- end: h0
-
-
-
-
-
-
-
-
-
-
--- component h1:
-caption title:
-optional body body:
-
--- tf.h1: $h1.title
-
-$h1.body
-
--- end: h1
-
-
-
-
-
-
-
-
-
-
--- component h2:
-caption title:
-optional body body:
-
--- tf.h2: $h2.title
-
-$h2.body
-
--- end: h2
-
-
-
-
-
-
-
-
-
-
 -- component menu-mobile:
 pr.toc-item list sections:
 
@@ -970,6 +894,91 @@ $on-click$: $ftd.toggle($a = $header-mobile.sidebar-open)
 -- end: ftd.row
 
 -- end: header-mobile
+
+
+
+
+
+
+
+
+
+
+-- component markdown:
+caption or body body:
+
+-- tf.markdown:
+
+$markdown.body
+
+
+-- end: markdown
+
+
+
+
+
+
+
+
+
+
+-- component h0:
+caption title:
+optional body body:
+
+-- tf.h0: $h0.title
+
+$h0.body
+
+-- end: h0
+
+
+
+
+
+
+
+
+
+
+-- component h1:
+caption title:
+optional body body:
+
+-- tf.h1: $h1.title
+
+$h1.body
+
+-- end: h1
+
+
+
+
+
+
+
+
+
+
+-- component h2:
+caption title:
+optional body body:
+
+-- tf.h2: $h2.title
+
+$h2.body
+
+-- end: h2
+
+
+
+
+
+
+
+
+
 
 -- component h3:
 caption title:

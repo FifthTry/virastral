@@ -14,6 +14,7 @@ $processor$: pr.full-sitemap
 
 
 
+
 -- component page:
 optional caption title:
 optional body body:
@@ -387,6 +388,7 @@ color: $inherited.colors.text-strong
 white-space: nowrap
 
 -- end: ftd.row
+
 -- end: ftd.row
 
 -- end: button
@@ -609,47 +611,12 @@ width: fill-container
 white-space: nowrap
 padding-top.px: 7
 
-
 -- end: ftd.column
 
 -- end: sections-list
 
 
 
-
-
-
-
-
-
--- component markdown:
-caption or body body:
-
--- tf.markdown:
-
-$markdown.body
-
-
--- end: markdown
-
-
-
-
-
-
-
-
-
-
--- component h0:
-caption title:
-optional body body:
-
--- tf.h0: $h0.title
-
-$h0.body
-
--- end: h0
 
 
 
@@ -719,6 +686,45 @@ $sidebar-open: $header.sidebar-open
 
 
 
+
+-- component markdown:
+caption or body body:
+
+-- tf.markdown:
+
+$markdown.body
+
+
+-- end: markdown
+
+
+
+
+
+
+
+
+
+
+-- component h0:
+caption title:
+optional body body:
+
+-- tf.h0: $h0.title
+
+$h0.body
+
+-- end: h0
+
+
+
+
+
+
+
+
+
+
 -- component h1:
 caption title:
 optional body body:
@@ -728,6 +734,7 @@ optional body body:
 $h1.body
 
 -- end: h1
+
 
 
 
@@ -973,4 +980,3 @@ optional body body:
 $h3.body
 
 -- end: h3
-

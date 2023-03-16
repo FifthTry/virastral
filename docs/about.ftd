@@ -1,19 +1,18 @@
 -- import: fifthtry.github.io/virastral/assets
 -- import: fifthtry.github.io/virastral/lib
 
-
-
 -- ft.page: VirASTRAL About 
 site-logo: https://fifthtry.github.io/virastral/-/fifthtry.github.io/virastral/static/logo.png
 colors: $cs.main
 
-
 -- pd.package: `about`
 name: fifthtry.github.io/virastral
 
-We have created about component which can be used as part of page components.
+We have created about component which can be used as part of page
+components.
 
-To use virastral components on your web package, add below into FASTN.ftd file:
+To use virastral components on your web package, add below into
+FASTN.ftd file:
 
 -- cb.code:
 lang: ftd
@@ -21,14 +20,10 @@ lang: ftd
 \-- fastn.dependency: fifthtry.github.io/virastral
 \-- fastn.auto-import: fifthtry.github.io/virastral/lib
 
--- ftd.column:
-id: about-component
--- end: ftd.column
-
 -- lib.h2: `about` component
 
-`about` can be added inside `page` component or can be used as an individual
-component. 
+`about` can be added inside `page` component or can be used as an
+individual component. 
 
 -- cb.rendered:
 

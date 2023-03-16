@@ -1,12 +1,9 @@
 -- import: fifthtry.github.io/virastral/assets
 -- import: fifthtry.github.io/virastral/lib
 
-
-
 -- ft.page: VirASTRAL Slider 
 site-logo: https://fifthtry.github.io/virastral/-/fifthtry.github.io/virastral/static/logo.png
 colors: $cs.main
-
 
 -- pd.package: `slider`
 name: fifthtry.github.io/virastral
@@ -20,10 +17,6 @@ lang: ftd
 
 \-- fastn.dependency: fifthtry.github.io/virastral
 \-- fastn.auto-import: fifthtry.github.io/virastral/lib
-
--- ftd.column:
-id: slider-component
--- end: ftd.column
 
 -- lib.h2: `slider` component
 

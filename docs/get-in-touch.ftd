@@ -1,12 +1,9 @@
 -- import: fifthtry.github.io/virastral/assets
 -- import: fifthtry.github.io/virastral/lib
 
-
-
 -- ft.page: VirASTRAL Get-in-touch 
 site-logo: https://fifthtry.github.io/virastral/-/fifthtry.github.io/virastral/static/logo.png
 colors: $cs.main
-
 
 -- pd.package: `get-in-touch`
 name: fifthtry.github.io/virastral
@@ -21,10 +18,6 @@ lang: ftd
 
 \-- fastn.dependency: fifthtry.github.io/virastral
 \-- fastn.auto-import: fifthtry.github.io/virastral/lib
-
--- ftd.column:
-id: get-in-touch-component
--- end: ftd.column
 
 -- lib.h2: `get-in-touch` component
 

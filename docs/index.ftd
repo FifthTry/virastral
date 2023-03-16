@@ -1,8 +1,6 @@
 -- import: fifthtry.github.io/virastral/assets
 -- import: fifthtry.github.io/virastral/lib
 
-
-
 -- ft.page: 
 site-logo: https://fifthtry.github.io/virastral/-/fifthtry.github.io/virastral/static/logo.png
 colors: $cs.main
@@ -15,19 +13,13 @@ page components.
 
 To use virastral components on your web package, add below into FASTN.ftd file:
 
-
 -- cb.code:
 lang: ftd
 
 \-- fastn.dependency: fifthtry.github.io/virastral
 \-- fastn.auto-import: fifthtry.github.io/virastral/lib
 
--- ftd.column:
-id: page-component
--- end: ftd.column
-
 -- lib.h2: `page` component
-
 
 `page` component comes with `header`, `footer`, and `body` components. You can
 also add more child components inside page component.

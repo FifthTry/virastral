@@ -1,12 +1,9 @@
 -- import: fifthtry.github.io/virastral/assets
 -- import: fifthtry.github.io/virastral/lib
 
-
-
 -- ft.page: VirASTRAL Card 
 site-logo: https://fifthtry.github.io/virastral/-/fifthtry.github.io/virastral/static/logo.png
 colors: $cs.main
-
 
 -- pd.package: `card`
 name: fifthtry.github.io/virastral
@@ -55,7 +52,8 @@ avatar: $assets.files.static.ravi.jpeg
 profile: **Managing Partner, CEO**
 url: https://www.linkedin.com/in/ravisundararajan/
 
-* Former COO at GupShup. Pre-IPO Exec at Akamai. VP at Palm/HP. McKinsey. Harvard MBA *
+* Former COO at GupShup. Pre-IPO Exec at Akamai. VP at Palm/HP. McKinsey.
+  Harvard MBA *
 
 -- end: ftd.column
 

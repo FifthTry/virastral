@@ -302,22 +302,24 @@ boolean $is-active: false
 
 -- ftd.row:
 if: {button.role == "small"}
-border-width.px: 1
-border-color: $inherited.colors.text-strong
+border-width.px: 2
+border-color: rgba(255,255,255, 0.8)
 border-color if {button.is-active}: $inherited.colors.cta-primary.hover
 border-radius.px: 3 
 background.solid if {button.is-active}: $inherited.colors.cta-primary.hover
 $on-mouse-enter$: $ftd.set-bool($a = $button.is-active, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $button.is-active, v = false)
-padding-vertical.px: 6
-padding-vertical.px if {ftd.device == " mobile"}: 5
-padding-horizontal.px: 15
 link: $button.url
 align-self: center
+padding-vertical.px: 4
+padding-vertical.px if {ftd.device == "mobile"}: 5
+padding-horizontal.px: 16
+min-height.fixed.px: 34
+padding-top.px: 5
 
 -- ftd.text: $button.title
 role: $inherited.types.button-small
-color: $inherited.colors.text-strong
+color: rgba(255,255,255, 0.8)
 white-space: nowrap
 
 -- end: ftd.row

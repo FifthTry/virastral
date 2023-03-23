@@ -145,7 +145,8 @@ children wrap:
 -- ftd.column:
 width: fill-container
 max-width.fixed.px: 1290
-spacing.fixed.px: 24
+spacing.fixed.px if { ftd.device != "mobile" }: 24
+spacing.fixed.px if { ftd.device == "mobile" }: 16
 align-content: center
 padding-vertical.px: 120
 padding-horizontal.px if { ftd.device == "mobile" }: 24
@@ -238,13 +239,29 @@ string profile:
 body body:
 
 -- ftd.column:
-height.fixed.px: 600
-width.fixed.px: 424
+height.fixed.px if { ftd.device != "mobile" }: 600
+width.fixed.px if { ftd.device != "mobile" }: 424
+width if { ftd.device == "mobile" }: fill-container
 color: $inherited.colors.background.step-1
 align-content: center
+margin-top.px if { ftd.device == "mobile" }: 8
 
 -- ftd.column:
+if: { ftd.device != "mobile" }
 width.fixed.px: 400
+
+-- ftd.image:
+src: $card.avatar
+width: fill-container
+height: auto
+margin-bottom.px: 16
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { ftd.device == "mobile" }
+width: fill-container
+padding-horizontal.px: 7
 
 -- ftd.image:
 src: $card.avatar
@@ -261,9 +278,10 @@ role: $inherited.types.heading-tiny
 role: $inherited.types.copy-regular
 
 -- ftd.text: $card.body
-role: $inherited.types.copy-regular
-margin-bottom.px: 24
-padding-horizontal.px: 10
+role: $inherited.types.source-code
+margin-bottom.px: 16
+padding-horizontal.px if { ftd.device != "mobile" }: 10
+padding-horizontal.px if { ftd.device == "mobile" }: 6
 text-align: center
 
 -- ftd.column:
@@ -273,6 +291,7 @@ padding-vertical.px: 12
 padding-horizontal.px: 12
 align-self: center
 align-content: center
+margin-bottom.px if { ftd.device == "mobile" }: 34
 
 -- ftd.image:
 src: $assets.files.static.linkedin.svg

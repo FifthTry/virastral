@@ -167,7 +167,6 @@ width: fill-container
 align-self: center
 align-content: center
 children: $about.wrap
-spacing.fixed.px: 32
 
 -- end: ftd.row
 
@@ -240,15 +239,20 @@ body body:
 
 -- ftd.column:
 height.fixed.px: 600
-width.fixed.px: 400
+width.fixed.px: 424
 color: $inherited.colors.background.step-1
 align-content: center
+
+-- ftd.column:
+width.fixed.px: 400
 
 -- ftd.image:
 src: $card.avatar
 width: fill-container
 height: auto
 margin-bottom.px: 16
+
+-- end: ftd.column
 
 -- ftd.text: $card.title
 role: $inherited.types.heading-tiny

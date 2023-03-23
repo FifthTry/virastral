@@ -156,8 +156,9 @@ max-width.fixed.percent if { ftd.device != "mobile" }: 65
 region: h2
 
 -- ftd.text: $about.body
-role: $inherited.types.copy-regular
-max-width.fixed.percent if { ftd.device != "mobile" }: 65
+role: $inherited.types.source-code
+color: $inherited.colors.custom.ten
+max-width.fixed.px if { ftd.device != "mobile" }: 800
 text-align: center
 
 -- ftd.row:

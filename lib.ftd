@@ -5,7 +5,10 @@
 -- pr.sitemap-data sitemap:
 $processor$: pr.full-sitemap
 
+-- void adjustBg():
+js: $assets.files.static.script.js
 
+loadWindow();
 
 
 
@@ -26,61 +29,11 @@ boolean docs: false
 
 -- ftd.column:
 width: fill-container
+$on-mouse-enter$: $adjustBg()
 
 -- ftd.column:
 width: fill-container
 background.solid if { page.body != NULL }: $inherited.colors.background.base
-
--- ftd.column:
-if: { ftd.device != "mobile" }
-width: fill-container
-height: auto
-
--- ftd.image:
-if: { $page.body == NULL }
-src: $assets.files.static.bgimage.jpeg
-anchor: parent
-top.px: 0
-left.px: 0
-height: auto
-width: fill-container
-z-index: -1
-
--- end: ftd.column
-
--- ftd.column:
-if: { ftd.device == "mobile" }
-width: fill-container
-height.fixed.px: 777
-anchor: parent
-top.px: 0
-left.px: 0
-z-index: -1
-overflow-x: hidden
-
--- ftd.image:
-if: { $page.body == NULL }
-src: $assets.files.static.bgimage.jpeg
-height: fill-container
-margin-left.px: -400
-
--- end: ftd.column
-
--- ftd.column:
-max-width.fixed.px: 1290
-align-self: center
-width: fill-container
-
--- header:
-logo: $page.site-logo
-site-name: $page.site-name
-site-url: $page.site-url
-contact-txt: $page.contact-text
-contact-url: $page.contact
-sections: $page.sections
-navbar: $page.navbar
-
--- end: ftd.column
 
 -- ftd.column:
 if: { $page.title != NULL }
@@ -435,6 +388,18 @@ padding-horizontal.px: 24
 
 -- ftd.column:
 width: fill-container
+height.fixed.px: 618
+background.solid: #f1f1f1
+anchor: parent
+top.px: 0
+left.px: 0
+z-index: -1
+overflow-y: hidden
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
 anchor: parent
 top.px: 0
 left.px: 0
@@ -445,6 +410,7 @@ overflow-y: hidden
 -- ftd.image:
 src: $slider.background-image
 width: fill-container
+max-width.fixed.percent: 100
 
 -- end: ftd.column
 
@@ -509,42 +475,76 @@ string cta-text:
 string cta-link:
 body body:
 integer width: 1290
+ftd.image-src site-logo:  $assets.files.static.logo.png
+string site-url:  /
+optional string site-name:
+pr.toc-item list sections: $sitemap.sections
+string contact-text: Contact Us
+string contact: /
+boolean navbar: false
 
 -- ftd.column:
-height: fill-container
-padding-vertical.px: 100
-padding-bottom.px: 300
-padding-bottom.px if { ftd.device == "mobile" }: 70
-padding-horizontal.px: 35
+width: fill-container
+align-content: center
+id: adjust-bg
+background.image: $assets.files.static.bgimage.jpeg
+
+-- ftd.column:
+max-width.fixed.px: 1290
 align-self: center
+width: fill-container
+
+-- header:
+logo: $hero.site-logo
+site-name: $hero.site-name
+site-url: $hero.site-url
+contact-txt: $hero.contact-text
+contact-url: $hero.contact
+sections: $hero.sections
+navbar: $hero.navbar
+
+-- end: ftd.column
 
 -- ftd.column:
 width: fill-container
 max-width.fixed.px: $hero.width 
 align-content if { ftd.device == "mobile" }: center
+padding-top.px: 100
+padding-bottom.px if { ftd.device != "mobile" }: 100
+padding-bottom.px if { ftd.device == "mobile" }: 70
 
 -- ftd.column:
 width.fixed.percent if { ftd.device == "desktop" }: 55
 width.fixed.percent if { ftd.device == "mobile" }: 100
 align-content if { ftd.device == "mobile" }: center
-spacing.fixed.px: 32
 
 -- ftd.text: $hero.title
 role: $inherited.types.heading-hero
 color: $inherited.colors.text-strong
 text-align if { ftd.device == "mobile" }: center
 region: h1
+margin-bottom.px: 20
+width.fixed.px if { ftd.device == "mobile"}: 250
 
 -- ftd.text:
-role: $inherited.types.copy-regular
+role: $inherited.types.blockquote
 color: $inherited.colors.text-strong
 text-align if { ftd.device == "mobile" }: center
+margin-bottom.px: 48
+width.fixed.px if { ftd.device == "mobile"}: 320
 
 $hero.body
 
 -- button: $hero.cta-text
 role: large
 url: $hero.cta-link
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { ftd.device != "mobile"}
+width: fill-container
+height.fixed.px: 150
 
 -- end: ftd.column
 
@@ -792,7 +792,7 @@ boolean navbar:
 width: fill-container
 border-bottom-width.px: 1
 border-color: $inherited.colors.border
-padding-vertical.px: 20
+padding-vertical.px: 18
 margin-left.px if { ftd.device == "mobile" }: 23
 margin-left.px if { ftd.device == "mobile" }: 23
 spacing: space-between
